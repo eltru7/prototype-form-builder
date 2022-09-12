@@ -1,4 +1,4 @@
-export class ConditionalField {
+export class RequiredField {
   public name;
   public requiredValue;
 

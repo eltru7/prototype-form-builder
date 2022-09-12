@@ -9,7 +9,7 @@ export class EmailFieldInput {
   }
 
   submitAnswer(answer: string) {
-    // Some logic to validate email address
+    // Some logic to validate the email address
     this.answer = answer;
   }
 }

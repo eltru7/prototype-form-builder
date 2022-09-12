@@ -67,30 +67,30 @@ export class Form {
 
   private isFieldDisplayed(field: any) {
     let countRequiredFieldFilled = 0;
-    const conditionals = field.template.conditionals;
-    for(let conditionalField of conditionals.conditionalFields) {
-      let conditionalFieldAnswer = this.findFieldAnswer(conditionalField.name);
-      if(conditionalFieldAnswer){
-        if(conditionalField.requiredValue && conditionalFieldAnswer === conditionalField.requiredValue || !conditionalField.requiredValue && conditionalFieldAnswer) {
+    const fieldsRequirements = field.template.fieldsRequirements;
+    for(let requiredField of fieldsRequirements.requiredFields) {
+      let requiredFieldAnswer = this.findRequiredFieldAnswer(requiredField.name);
+      if(requiredFieldAnswer){
+        if(requiredField.requiredValue && requiredFieldAnswer === requiredField.requiredValue || !requiredField.requiredValue && requiredFieldAnswer) {
           countRequiredFieldFilled += 1;
         }
       }
     }
-    return countRequiredFieldFilled >= conditionals.qtyRequiredFields;
+    return countRequiredFieldFilled >= fieldsRequirements.qtyRequiredFields;
   };
 
-  private findFieldAnswer(conditionalFieldName: string) {
+  private findRequiredFieldAnswer(requiredFieldName: string) {
     // TODO clean this, try lodash functions + change fields type
     let foundField;
-    foundField = this.fields.textFields.find(field => field.template.name === conditionalFieldName);
+    foundField = this.fields.textFields.find(field => field.template.name === requiredFieldName);
     if(!foundField){
-      foundField = this.fields.emailFields.find(field => field.template.name === conditionalFieldName);
+      foundField = this.fields.emailFields.find(field => field.template.name === requiredFieldName);
       if(!foundField) {
-        foundField = this.fields.booleanFields.find(field => field.template.name === conditionalFieldName);
+        foundField = this.fields.booleanFields.find(field => field.template.name === requiredFieldName);
         if(!foundField) {
-          foundField = this.fields.fileFields.find(field => field.template.name === conditionalFieldName);
+          foundField = this.fields.fileFields.find(field => field.template.name === requiredFieldName);
           if(!foundField) {
-            foundField = this.fields.singleSelectFields.find(field => field.template.name === conditionalFieldName);
+            foundField = this.fields.singleSelectFields.find(field => field.template.name === requiredFieldName);
           }
         }
       }

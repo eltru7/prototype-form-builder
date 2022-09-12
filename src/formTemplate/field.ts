@@ -1,11 +1,11 @@
-import {ConditionalField} from "./conditionalField";
-import {Conditionals} from "./conditionals";
+import {RequiredField} from "./requiredField";
+import {FieldsRequirements} from "./fieldsRequirements";
 
 export class Field {
   public name = "";
   public description = "";
   public isMandatory = false;
-  public conditionals = new Conditionals();
+  public fieldsRequirements = new FieldsRequirements();
 
   constructor(name: string, description: string, isMandatory: boolean) {
     this.name = name;
@@ -13,10 +13,10 @@ export class Field {
     this.isMandatory = isMandatory;
   };
 
-  addConditional(fieldName: string, qtyRequiredFields: number, requiredValue?: string) {
-    const conditionalField = new ConditionalField(fieldName, requiredValue);
-    this.conditionals.conditionalFields.push(conditionalField);
-    this.conditionals.qtyRequiredFields = qtyRequiredFields;
+  addRequiredField(fieldName: string, qtyRequiredFields: number, requiredValue?: string) {
+    const requiredField = new RequiredField(fieldName, requiredValue);
+    this.fieldsRequirements.requiredFields.push(requiredField);
+    this.fieldsRequirements.qtyRequiredFields = qtyRequiredFields;
   };
 }
 
