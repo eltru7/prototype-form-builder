@@ -9,7 +9,10 @@ Suppport  the following form fields:
  - Single select dropdown
  - Boolean field
  - File field
-
+ 
+## Installing the dependencies
+ 
+`yarn install`
 
 ## Start the app
 
