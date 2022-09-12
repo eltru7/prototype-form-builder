@@ -17,7 +17,7 @@ ageRangeField.addSelectOption("35-45", "Betwwen 36-45");
 const emailField = new Field("email", "What is your email address?", false);
 
 const isVeteranField = new BooleanField("veteran", "Are you a veteran?", true);
-isVeteranField.addRequiredField("name", 1, "John");
+isVeteranField.addRequiredFieldForVisibility("name", 1, "John");
 
 const fileField = new FileField("", "Upload a photo",false);
 

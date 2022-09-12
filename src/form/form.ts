@@ -67,8 +67,8 @@ export class Form {
 
   private isFieldDisplayed(field: any) {
     let countRequiredFieldFilled = 0;
-    const fieldsRequirements = field.template.fieldsRequirements;
-    for(let requiredField of fieldsRequirements.requiredFields) {
+    const fieldsVisibilityRequirements = field.template.fieldsVisibilityRequirements;
+    for(let requiredField of fieldsVisibilityRequirements.requiredFields) {
       let requiredFieldAnswer = this.findRequiredFieldAnswer(requiredField.name);
       if(requiredFieldAnswer){
         if(requiredField.requiredValue && requiredFieldAnswer === requiredField.requiredValue || !requiredField.requiredValue && requiredFieldAnswer) {
@@ -76,7 +76,7 @@ export class Form {
         }
       }
     }
-    return countRequiredFieldFilled >= fieldsRequirements.qtyRequiredFields;
+    return countRequiredFieldFilled >= fieldsVisibilityRequirements.qtyRequiredFields;
   };
 
   private findRequiredFieldAnswer(requiredFieldName: string) {

@@ -1,6 +1,6 @@
 import {RequiredField} from "./requiredField";
 
-export class FieldsRequirements {
+export class FieldsVisibilityRequirements {
   public requiredFields = [] as RequiredField[];
   public qtyRequiredFields = 0;
 }

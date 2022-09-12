@@ -1,11 +1,11 @@
 import {RequiredField} from "./requiredField";
-import {FieldsRequirements} from "./fieldsRequirements";
+import {FieldsVisibilityRequirements} from "./fieldsVisibilityRequirements";
 
 export class Field {
   public name = "";
   public description = "";
   public isMandatory = false;
-  public fieldsRequirements = new FieldsRequirements();
+  public fieldsVisibilityRequirements = new FieldsVisibilityRequirements();
 
   constructor(name: string, description: string, isMandatory: boolean) {
     this.name = name;
@@ -13,10 +13,10 @@ export class Field {
     this.isMandatory = isMandatory;
   };
 
-  addRequiredField(fieldName: string, qtyRequiredFields: number, requiredValue?: string) {
+  addRequiredFieldForVisibility(fieldName: string, qtyRequiredFields: number, requiredValue?: string) {
     const requiredField = new RequiredField(fieldName, requiredValue);
-    this.fieldsRequirements.requiredFields.push(requiredField);
-    this.fieldsRequirements.qtyRequiredFields = qtyRequiredFields;
+    this.fieldsVisibilityRequirements.requiredFields.push(requiredField);
+    this.fieldsVisibilityRequirements.qtyRequiredFields = qtyRequiredFields;
   };
 }
 
