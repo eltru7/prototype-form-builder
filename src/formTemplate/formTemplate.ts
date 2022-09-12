@@ -2,11 +2,11 @@ import {Form} from "../form/form";
 import {Field} from "./field";
 import {BooleanField} from "./booleanField";
 import {SingleSelectField} from "./singleSelectField";
-import {SingleSelectFieldInput} from "../form/singleSelectFieldInput";
-import {FileFieldInput} from "../form/fileFieldInput";
-import {BooleanFieldInput} from "../form/booleanFieldInput";
-import {EmailFieldInput} from "../form/emailFieldInput";
-import {TextFieldInput} from "../form/textFieldInput";
+import {SingleSelectInputField} from "../form/singleSelectInputField";
+import {FileInputField} from "../form/fileInputField";
+import {BooleanInputField} from "../form/booleanInputField";
+import {EmailInputField} from "../form/emailinputField";
+import {TextInputField} from "../form/textInputField";
 import {FileField} from "./fileField";
 
 export class FormTemplate {
@@ -39,20 +39,20 @@ export class FormTemplate {
   generateForm() {
     const form = new Form();
     for(let field of this.textFields) {
-      form.addTextField(new TextFieldInput(field));
+      form.addTextField(new TextInputField(field));
     }
     for(let field of this.emailFields) {
-      form.addEmailField(new EmailFieldInput(field));
+      form.addEmailField(new EmailInputField(field));
     }
     for(let field of this.booleanFields) {
-      form.addBooleanField(new BooleanFieldInput(field));
+      form.addBooleanField(new BooleanInputField(field));
     }
 
     for(let field of this.fileFields) {
-      form.addFileField(new FileFieldInput(field));
+      form.addFileField(new FileInputField(field));
     }
     for(let field of this.singleSelectFields) {
-      form.addSingleSelectField(new SingleSelectFieldInput(field));
+      form.addSingleSelectField(new SingleSelectInputField(field));
     }
     return form;
   }

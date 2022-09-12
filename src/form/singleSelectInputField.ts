@@ -1,6 +1,6 @@
 import {SingleSelectField} from "../formTemplate/singleSelectField";
 
-export class SingleSelectFieldInput{
+export class SingleSelectInputField{
   public template;
   public answer = "";
 

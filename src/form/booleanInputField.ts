@@ -1,6 +1,6 @@
 import {BooleanField} from "../formTemplate/booleanField";
 
-export class BooleanFieldInput {
+export class BooleanInputField {
   public template;
   public answer = false;
 

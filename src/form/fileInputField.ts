@@ -1,6 +1,6 @@
 import {Field} from "../formTemplate/field";
 
-export class FileFieldInput {
+export class FileInputField {
   public template;
   public answer = "";
 

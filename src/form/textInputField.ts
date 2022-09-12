@@ -1,15 +1,14 @@
 import {Field} from "../formTemplate/field";
 
-export class EmailFieldInput {
+export class TextInputField {
   public template;
-  public answer = "";
+  public answer = ""
 
   constructor(template: Field) {
-    this.template = template
+    this.template = template;
   }
 
   submitAnswer(answer: string) {
-    // Some logic to validate the email address
     this.answer = answer;
   }
 }

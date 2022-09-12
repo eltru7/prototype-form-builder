@@ -1,37 +1,37 @@
-import {EmailFieldInput} from "./emailFieldInput";
-import {FileFieldInput} from "./fileFieldInput";
-import {BooleanFieldInput} from "./booleanFieldInput";
-import {SingleSelectFieldInput} from "./singleSelectFieldInput";
-import {TextFieldInput} from "./textFieldInput";
+import {EmailInputField} from "./emailinputField";
+import {FileInputField} from "./fileInputField";
+import {BooleanInputField} from "./booleanInputField";
+import {SingleSelectInputField} from "./singleSelectInputField";
+import {TextInputField} from "./textInputField";
 
 export interface FormFields {
-  textFields: TextFieldInput[];
-  emailFields: EmailFieldInput[];
-  booleanFields: BooleanFieldInput[];
-  fileFields: FileFieldInput[];
-  singleSelectFields: SingleSelectFieldInput[];
+  textFields: TextInputField[];
+  emailFields: EmailInputField[];
+  booleanFields: BooleanInputField[];
+  fileFields: FileInputField[];
+  singleSelectFields: SingleSelectInputField[];
 }
 
 export class Form {
-  fields = {textFields: [] as TextFieldInput[], emailFields: [] as EmailFieldInput[], booleanFields: [] as BooleanFieldInput[], fileFields: [] as FileFieldInput[], singleSelectFields:[] as SingleSelectFieldInput[]} as FormFields;
+  fields = {textFields: [] as TextInputField[], emailFields: [] as EmailInputField[], booleanFields: [] as BooleanInputField[], fileFields: [] as FileInputField[], singleSelectFields:[] as SingleSelectInputField[]} as FormFields;
 
-  addTextField(field: TextFieldInput) {
+  addTextField(field: TextInputField) {
     this.fields.textFields.push(field);
   }
 
-  addEmailField(field: EmailFieldInput) {
+  addEmailField(field: EmailInputField) {
     this.fields.emailFields.push(field);
   }
 
-  addBooleanField(field: BooleanFieldInput) {
+  addBooleanField(field: BooleanInputField) {
     this.fields.booleanFields.push(field);
   }
 
-  addFileField(field: FileFieldInput) {
+  addFileField(field: FileInputField) {
     this.fields.fileFields.push(field);
   }
 
-  addSingleSelectField(field: SingleSelectFieldInput) {
+  addSingleSelectField(field: SingleSelectInputField) {
     this.fields.singleSelectFields.push(field);
   }
 
